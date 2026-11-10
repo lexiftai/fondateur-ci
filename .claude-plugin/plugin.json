@@ -1,0 +1,8 @@
+{
+  "name": "fondateur-ci",
+  "description": "Onze skills Claude pour tester une activité avant de la lancer en Côte d'Ivoire : un conseil de quatre lentilles dont une lentille Terrain, un panel de 100 acheteurs simulés payés en FCFA, le prix, l'offre, les finances, le marketing, la marque, les opérations, le lancement et le plan d'affaires. En français, MIT.",
+  "version": "1.0.0",
+  "author": {"name": "Joel Adou"},
+  "license": "MIT",
+  "keywords": ["claude-code", "claude-skills", "cote-d-ivoire", "afrique", "fcfa", "mobile-money", "plan-d-affaires", "entrepreneuriat"]
+}

@@ -1,0 +1,46 @@
+{
+  "activite": "Jus Lagune (exemple fictif : un kiosque de jus naturels à Cocody Angré)",
+  "note": "Profil d'exemple. Les parts, les revenus et les moyens de paiement sont à remplacer par ce que vous savez de vos clients.",
+  "cible": "Habitants et travailleurs d'Angré et de la Riviera, 18 à 45 ans, qui achètent à boire dehors plusieurs fois par semaine",
+  "lieu": "Abidjan, Cocody Angré",
+  "devise": "FCFA",
+  "age": [18, 45],
+  "segments": [
+    {"nom": "Élève ou étudiant", "part": 0.25, "revenu_mensuel": [20000, 80000], "type_de_revenu": "argent de poche ou petits boulots, irrégulier"},
+    {"nom": "Employé ou fonctionnaire", "part": 0.40, "revenu_mensuel": [120000, 400000], "type_de_revenu": "salaire versé en fin de mois"},
+    {"nom": "Commerçant ou indépendant", "part": 0.25, "revenu_mensuel": [80000, 500000], "type_de_revenu": "rentrées journalières qui varient"},
+    {"nom": "Cadre", "part": 0.10, "revenu_mensuel": [500000, 1500000], "type_de_revenu": "salaire versé en fin de mois"}
+  ],
+  "comportements": [
+    {"nom": "Fidèle à la vendeuse du quartier", "part": 0.20, "comment": "Achète le bissap en sachet chez la même tantie depuis des années."},
+    {"nom": "Attentif à sa santé", "part": 0.15, "comment": "Évite les sodas, cherche du naturel sans colorant."},
+    {"nom": "Suit les tendances", "part": 0.15, "comment": "Essaie ce qu'il voit passer sur TikTok et le montre en statut WhatsApp."},
+    {"nom": "Dépense surtout en début de mois", "part": 0.15, "comment": "Se fait plaisir après la paie, serre tout dès le 15."},
+    {"nom": "Commande sur WhatsApp", "part": 0.12, "comment": "Commande à manger et à boire par message et se fait livrer."},
+    {"nom": "Demande l'avis des proches", "part": 0.13, "comment": "N'essaie un nouvel endroit que si quelqu'un de confiance en a parlé."},
+    {"nom": "Négocie tout", "part": 0.10, "comment": "Demande toujours un geste, un bonus ou un prix pour deux."}
+  ],
+  "objections": [
+    "1 000 FCFA pour un jus ? La tantie vend le sachet à 100",
+    "Est-ce que c'est vraiment naturel, sans colorant ni poudre ?",
+    "Est-ce que c'est préparé proprement ?",
+    "Je ne connais pas, personne ne m'en a parlé",
+    "Les frais de livraison en plus, c'est trop",
+    "Je peux faire mon bissap moi-même à la maison",
+    "Je verrai en début de mois"
+  ],
+  "habitudes": [
+    "tu prends le gbaka au carrefour chaque matin",
+    "tu fais du sport le samedi matin au terrain du quartier",
+    "tu manges au maquis près du bureau à midi",
+    "tu passes la soirée devant les séries avec ta famille",
+    "tu fais tes courses au marché le dimanche"
+  ],
+  "paiements": [
+    {"nom": "Wave", "part": 0.35},
+    {"nom": "Orange Money", "part": 0.20},
+    {"nom": "MTN MoMo", "part": 0.15},
+    {"nom": "Moov Money", "part": 0.05},
+    {"nom": "Espèces", "part": 0.25}
+  ]
+}

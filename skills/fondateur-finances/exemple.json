@@ -1,0 +1,35 @@
+{
+  "activite": "Jus Lagune (exemple fictif : un kiosque de jus naturels à Cocody Angré)",
+  "note": "Chiffres d'exemple pour montrer la forme du fichier. Remplacez chacun par vos devis, factures et prix relevés.",
+  "unite": "bouteille",
+  "devise": "FCFA",
+  "prix": 1000,
+  "couts_variables": [
+    {"libelle": "Fruits, gingembre, sucre (50 cl)", "cout": 280},
+    {"libelle": "Bouteille et bouchon", "cout": 120},
+    {"libelle": "Étiquette", "cout": 25},
+    {"libelle": "Glace et sachet", "cout": 25},
+    {"libelle": "Frais d'encaissement Mobile Money", "taux": 0.01}
+  ],
+  "charges_fixes_mensuelles": [
+    {"libelle": "Loyer du kiosque", "cout": 75000},
+    {"libelle": "Deux préparateurs-vendeurs", "cout": 180000},
+    {"libelle": "Charges sociales (estimation, à confirmer à la CNPS)", "cout": 27000},
+    {"libelle": "Électricité (congélateur, mixeurs)", "cout": 30000},
+    {"libelle": "Forfait internet et téléphone", "cout": 10000},
+    {"libelle": "Votre propre salaire", "cout": 150000}
+  ],
+  "demarrage": [
+    {"libelle": "Caution du loyer (3 mois)", "cout": 225000},
+    {"libelle": "Aménagement du kiosque", "cout": 450000},
+    {"libelle": "Congélateur et réfrigérateur", "cout": 400000},
+    {"libelle": "Extracteur et mixeurs", "cout": 150000},
+    {"libelle": "Enseigne et création des étiquettes", "cout": 100000},
+    {"libelle": "Stock de départ", "cout": 80000},
+    {"libelle": "Lancement (publicité Facebook, flyers)", "cout": 100000}
+  ],
+  "jours_par_mois": 26,
+  "capacite_par_jour": 200,
+  "volume_cible_par_jour": 90,
+  "montee_par_jour": [30, 40, 50, 58, 65, 70, 75, 78, 82, 85, 88, 90]
+}
