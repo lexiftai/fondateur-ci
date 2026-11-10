@@ -187,6 +187,7 @@ Ta façon d'acheter : {comportement}. {comportement_comment}
 {habitude_ligne}{paiement_ligne}La première chose qui te vient en tête devant une offre comme celle-ci : « {objection} »
 Tu fais partie de ces gens-là : {cible}.
 === FIN ===
+{achat_ligne}
 
 === CE QUI EST PROPOSÉ (tu le découvres pour la première fois, comme un passant ou quelqu'un qui fait défiler son fil) ===
 {pitch}
@@ -228,6 +229,7 @@ def ecrire_consignes(d, vague=VAGUE):
             habitude_ligne=("Ta journée : %s.\n" % c["habitude"]) if c.get("habitude") else "",
             paiement_ligne=("Tu paies d'habitude par : %s.\n" % c["paiement"]) if c.get("paiement") else "",
             raisons=" / ".join(RAISONS), devise=devise,
+            achat_ligne=("\nIci, « acheter » veut dire : %s\n" % etat["client"]["achat"]) if etat["client"].get("achat") else "",
             **{k: v for k, v in c.items() if k not in ("revenu_mensuel", "type_de_revenu", "habitude", "paiement")})
         cp = _chemin(d, "consignes", c["id"] + ".md")
         with open(cp, "w", encoding="utf-8") as fh:
@@ -435,8 +437,11 @@ def main(argv=None):
                 print("chaque acheteur a une réponse valide. Suite : panel.py bilan")
             else:
                 print("%d consignes en %d vagues de %d au plus. Lancez une vague à la fois :" % (n, len(vagues), a.vague))
+                # une consigne par ligne : un chemin peut contenir des espaces (« Ficsell App »)
                 for k, w in enumerate(vagues, 1):
-                    print("vague %d : %s" % (k, " ".join("%s=%s" % job for job in w)))
+                    print("vague %d :" % k)
+                    for pid, chemin in w:
+                        print("  %s\t%s" % (pid, chemin))
         elif a.cmd == "verifier":
             pbs = verifier(a.dir)
             if not pbs:

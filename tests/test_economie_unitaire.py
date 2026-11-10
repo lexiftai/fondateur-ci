@@ -30,6 +30,13 @@ class EconomieUnitaire(unittest.TestCase):
         plus_cher = eco.analyser(s, prix=2000)["variable_par_unite"]
         self.assertAlmostEqual(plus_cher - base, 10, places=6)  # 1% de 1 000 FCFA de plus
 
+    def test_les_couts_en_hausse_touchent_aussi_les_taux(self):
+        s = spec()
+        s["couts_variables"] = [{"libelle": "commission", "taux": 0.3}]
+        base, _, _, pire = [r for _, r in eco.sensibilite(s)]
+        self.assertLess(pire["contribution"], base["contribution"])
+        self.assertAlmostEqual(base["contribution"] - pire["contribution"], 1000 * 0.3 * 0.15, places=6)
+
     def test_un_taux_est_refuse_dans_les_charges_fixes(self):
         s = spec()
         s["charges_fixes_mensuelles"].append({"libelle": "commission", "taux": 0.05})

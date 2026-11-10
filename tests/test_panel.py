@@ -116,6 +116,34 @@ class Deroule(unittest.TestCase):
         with self.assertRaises(panel.ErreurPanel):
             panel.enregistrer(self.d, "P999", '{"id": "P999"}')
 
+    def test_la_liste_des_consignes_supporte_les_espaces(self):
+        d = os.path.join(self.d, "dossier avec espaces")
+        panel.init(d, exemple("fondateur-panel", "client.exemple.json"),
+                   exemple("fondateur-panel", "pitch.exemple.md"), n=3, graine=1)
+        import contextlib
+        import io
+        sortie = io.StringIO()
+        with contextlib.redirect_stdout(sortie):
+            panel.main(["--dir", d, "consignes"])
+        lignes = [l for l in sortie.getvalue().splitlines() if l.startswith("  P")]
+        self.assertEqual(len(lignes), 3)
+        pid, chemin = lignes[0].strip().split("\t")
+        self.assertEqual(pid, "P001")
+        self.assertTrue(os.path.isfile(chemin), chemin)
+
+    def test_le_sens_d_acheter_peut_etre_precise(self):
+        c = client()
+        c["achat"] = "ouvrir une boutique et y faire passer ses ventes"
+        chemin_client = os.path.join(self.d, "client.json")
+        with open(chemin_client, "w", encoding="utf-8") as fh:
+            json.dump(c, fh, ensure_ascii=False)
+        d = os.path.join(self.d, "b2b")
+        panel.init(d, chemin_client, exemple("fondateur-panel", "pitch.exemple.md"), n=2, graine=1)
+        with open(panel.ecrire_consignes(d)[0][0][1], encoding="utf-8") as fh:
+            self.assertIn("Ici, « acheter » veut dire : ouvrir une boutique", fh.read())
+        with open(panel.ecrire_consignes(self.d)[0][0][1], encoding="utf-8") as fh:
+            self.assertNotIn("Ici, « acheter »", fh.read())
+
     def test_bilan_sans_reponse_refuse(self):
         with self.assertRaises(panel.ErreurPanel):
             panel.bilan(self.d)

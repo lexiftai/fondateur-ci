@@ -182,8 +182,9 @@ def sensibilite(spec):
     lignes.append(("Volume -20%", analyser(spec, volume=0.8)))
     pire = json.loads(json.dumps(spec))
     for it in pire.get("couts_variables", []):
-        if "cout" in it:
-            it["cout"] = float(it["cout"]) * 1.15
+        # un frais en taux monte aussi : sinon un fichier tout en taux ne bougerait pas
+        cle = "taux" if "taux" in it else "cout"
+        it[cle] = float(it[cle]) * 1.15
     lignes.append(("Coûts unitaires +15%", analyser(pire)))
     return lignes
 

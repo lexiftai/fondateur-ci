@@ -55,6 +55,12 @@ un kiosque de jus fictif à Cocody Angré) :
   concret (le gbaka du matin, le maquis de midi, le marché du dimanche).
 - `paiements` (facultatif) : les moyens de paiement avec leur `part`. Chaque
   acheteur reçoit le sien.
+- `achat` (facultatif) : ce que « acheter » veut dire quand le client n'est pas
+  un consommateur, et sur quoi portent les questions de prix. Par exemple, pour
+  une plateforme qui se paie à la commission : « ouvrir une boutique et y faire
+  passer ses ventes ; les prix portent sur ce que la plateforme retient sur une
+  vente de 5 000 FCFA ». Sans ce champ, un vendeur ou une entreprise simulés
+  doivent deviner, et leurs réponses de prix deviennent incomparables.
 
 Partez de quelque chose de réel. Utilisez ce que l'utilisateur sait de ses
 clients et, si `/fondateur-concurrents` a tourné, les plaintes de
