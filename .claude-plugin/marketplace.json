@@ -2,13 +2,16 @@
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "fondateur-ci",
   "description": "Le pack fondateur pour la Côte d'Ivoire",
-  "owner": {"name": "Joel Adou"},
+  "owner": {
+    "name": "Joel Adou"
+  },
   "plugins": [
     {
       "name": "fondateur-ci",
       "description": "Onze skills Claude pour tester une activité avant de la lancer en Côte d'Ivoire.",
       "source": "./",
-      "category": "productivity"
+      "category": "productivity",
+      "homepage": "https://github.com/lexiftai/fondateur-ci"
     }
   ]
 }

@@ -38,10 +38,20 @@ les chiffres, les formalités et les canaux sont ceux de la Côte d'Ivoire.
 
 ## Installer
 
-En Claude Code, copier les dossiers dans vos skills personnels :
+En Claude Code, comme plugin :
+
+```
+/plugin marketplace add lexiftai/fondateur-ci
+/plugin install fondateur-ci@fondateur-ci
+```
+
+Les skills s'appellent alors `/fondateur-ci:fondateur-conseil` et ainsi de suite.
+Pour les avoir sous leur nom court (`/fondateur-conseil`), copiez les dossiers
+dans vos skills personnels :
 
 ```bash
-cp -r skills/fondateur-* ~/.claude/skills/
+git clone https://github.com/lexiftai/fondateur-ci.git
+cp -r fondateur-ci/skills/fondateur-* ~/.claude/skills/
 ```
 
 ou dans `.claude/skills/` d'un projet pour les limiter à ce projet. Sans Claude
